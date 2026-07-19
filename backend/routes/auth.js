@@ -10,10 +10,11 @@ const SALT_ROUNDS = 10;
 // Register a new user
 router.post('/register', async (req, res) => {
   try {
-    const { email, password } = req.body;
+    let { email, password } = req.body;
     if (!email || !password) {
       return res.status(400).json({ error: 'Email and password required' });
     }
+    email = email.toLowerCase();
     const hashed = await bcrypt.hash(password, SALT_ROUNDS);
     const { data, error } = await supabaseAdmin.from('users').insert({ email, password: hashed }).select().single();
     if (error) {
@@ -31,7 +32,8 @@ router.post('/register', async (req, res) => {
 // Login existing user
 router.post('/login', async (req, res) => {
   try {
-    const { email, password } = req.body;
+    let { email, password } = req.body;
+    email = email.toLowerCase();
     const { data: user, error } = await supabaseAdmin.from('users').select('id, email, password, role').eq('email', email).single();
     if (error || !user) return res.status(401).json({ error: 'Invalid credentials' });
     const match = await bcrypt.compare(password, user.password);
