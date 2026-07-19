@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-06-10T06:05:07.396Z",
+  "tables": {
+    "customers": 4,
+    "products": 6,
+    "bills": 19,
+    "bill_items": 44,
+    "pending_payments": 6,
+    "customer_visits": 5,
+    "audit_log": 61
+  },
+  "totalRows": 145,
+  "backupPath": "backups\\pos_backup_2026-06-10_11-35"
+}
