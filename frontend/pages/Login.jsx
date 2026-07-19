@@ -25,8 +25,8 @@ export default function Login() {
         setIsSignUp(false)
       } else {
         const { token, user } = await signIn(email, password)
-        // after successful sign-in, navigate to home
-        navigate('/', { replace: true })
+        const target = user.role === 'admin' ? '/admin' : '/';
+        navigate(target, { replace: true })
       }
     } catch (err) {
       setError(err.message || 'Authentication failed. Check your email and password.')

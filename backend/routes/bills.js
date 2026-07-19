@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { supabaseAdmin, sanitize } from '../utils/supabaseAdmin.js'
-import { requireAuth } from '../middleware/auth.js'
+import { requireAuth, requireAdmin } from '../middleware/auth.js'
 import { billingLimiter } from '../middleware/security.js'
 import { validateBill, validateUUID, validatePayment } from '../middleware/validate.js'
 import { logger } from '../utils/logger.js'
@@ -10,7 +10,7 @@ const router = Router()
 router.use(requireAuth)
 
 // GET /api/bills
-router.get('/', async (req, res) => {
+router.get('/', requireAdmin, async (req, res) => {
   try {
     const limit = Math.min(parseInt(req.query.limit)||50, 200)
     const { data, error } = await supabaseAdmin.from('bills')
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 })
 
 // GET /api/bills/:id (with items)
-router.get('/:id', validateUUID, async (req, res) => {
+router.get('/:id', validateUUID, requireAdmin, async (req, res) => {
   try {
     const [bill, items] = await Promise.all([
       supabaseAdmin.from('bills').select('*, customers(name, phone)').eq('id', req.params.id).single(),

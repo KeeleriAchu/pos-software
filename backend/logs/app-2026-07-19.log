@@ -325,3 +325,31 @@
 {"ts":"2026-07-19T15:57:57.399Z","level":"info","message":"🚀 POS Server running on port 3001"}
 {"ts":"2026-07-19T15:57:57.399Z","level":"info","message":"   Environment: development"}
 {"ts":"2026-07-19T15:57:57.399Z","level":"info","message":"   Client URL:  http://localhost:5173"}
+{"ts":"2026-07-19T15:58:04.056Z","level":"info","message":"Backup scheduled: 0 2 * * *"}
+{"ts":"2026-07-19T15:58:04.059Z","level":"info","message":"🚀 POS Server running on port 3001"}
+{"ts":"2026-07-19T15:58:04.059Z","level":"info","message":"   Environment: development"}
+{"ts":"2026-07-19T15:58:04.059Z","level":"info","message":"   Client URL:  http://localhost:5173"}
+{"ts":"2026-07-19T16:03:23.869Z","level":"info","message":"Backup scheduled: 0 2 * * *"}
+{"ts":"2026-07-19T16:03:23.872Z","level":"info","message":"🚀 POS Server running on port 3001"}
+{"ts":"2026-07-19T16:03:23.872Z","level":"info","message":"   Environment: development"}
+{"ts":"2026-07-19T16:03:23.872Z","level":"info","message":"   Client URL:  http://localhost:5173"}
+{"ts":"2026-07-19T16:03:40.774Z","level":"info","message":"Backup scheduled: 0 2 * * *"}
+{"ts":"2026-07-19T16:03:40.777Z","level":"info","message":"🚀 POS Server running on port 3001"}
+{"ts":"2026-07-19T16:03:40.778Z","level":"info","message":"   Environment: development"}
+{"ts":"2026-07-19T16:03:40.778Z","level":"info","message":"   Client URL:  http://localhost:5173"}
+{"ts":"2026-07-19T16:11:39.899Z","level":"info","message":"Backup scheduled: 0 2 * * *"}
+{"ts":"2026-07-19T16:11:39.902Z","level":"info","message":"🚀 POS Server running on port 3001"}
+{"ts":"2026-07-19T16:11:39.902Z","level":"info","message":"   Environment: development"}
+{"ts":"2026-07-19T16:11:39.902Z","level":"info","message":"   Client URL:  http://localhost:5173"}
+{"ts":"2026-07-19T16:11:57.818Z","level":"info","message":"Backup scheduled: 0 2 * * *"}
+{"ts":"2026-07-19T16:11:57.822Z","level":"info","message":"🚀 POS Server running on port 3001"}
+{"ts":"2026-07-19T16:11:57.822Z","level":"info","message":"   Environment: development"}
+{"ts":"2026-07-19T16:11:57.822Z","level":"info","message":"   Client URL:  http://localhost:5173"}
+{"ts":"2026-07-19T16:21:51.439Z","level":"info","message":"Backup scheduled: 0 2 * * *"}
+{"ts":"2026-07-19T16:21:51.442Z","level":"info","message":"🚀 POS Server running on port 3001"}
+{"ts":"2026-07-19T16:21:51.442Z","level":"info","message":"   Environment: development"}
+{"ts":"2026-07-19T16:21:51.442Z","level":"info","message":"   Client URL:  http://localhost:5173"}
+{"ts":"2026-07-19T16:21:53.005Z","level":"info","message":"Backup scheduled: 0 2 * * *"}
+{"ts":"2026-07-19T16:21:53.008Z","level":"info","message":"🚀 POS Server running on port 3001"}
+{"ts":"2026-07-19T16:21:53.009Z","level":"info","message":"   Environment: development"}
+{"ts":"2026-07-19T16:21:53.009Z","level":"info","message":"   Client URL:  http://localhost:5173"}

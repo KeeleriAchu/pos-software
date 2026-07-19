@@ -1,12 +1,12 @@
 import { Router } from 'express'
 import { supabaseAdmin, sanitize, isValidUUID } from '../utils/supabaseAdmin.js'
-import { requireAuth } from '../middleware/auth.js'
+import { requireAuth, requireAdmin } from '../middleware/auth.js'
 import { validateProduct, validateUUID } from '../middleware/validate.js'
 import { body } from 'express-validator'
 import { logger } from '../utils/logger.js'
 
 const router = Router()
-router.use(requireAuth)
+router.use(requireAdmin)
 
 // GET /api/products
 router.get('/', async (req, res) => {
