@@ -353,3 +353,7 @@
 {"ts":"2026-07-19T16:21:53.008Z","level":"info","message":"🚀 POS Server running on port 3001"}
 {"ts":"2026-07-19T16:21:53.009Z","level":"info","message":"   Environment: development"}
 {"ts":"2026-07-19T16:21:53.009Z","level":"info","message":"   Client URL:  http://localhost:5173"}
+{"ts":"2026-07-19T16:22:05.259Z","level":"info","message":"Backup scheduled: 0 2 * * *"}
+{"ts":"2026-07-19T16:22:05.261Z","level":"info","message":"🚀 POS Server running on port 3001"}
+{"ts":"2026-07-19T16:22:05.261Z","level":"info","message":"   Environment: development"}
+{"ts":"2026-07-19T16:22:05.261Z","level":"info","message":"   Client URL:  http://localhost:5173"}

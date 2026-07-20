@@ -8,7 +8,7 @@ import { useAuth } from '../../context/AuthContext'
 import ThemeToggle from '../ui/ThemeToggle'
 
 const navItems = [
-  { to: '/', icon: LayoutDashboard, label: 'Dashboard', role: 'all' },
+  { to: '/', icon: LayoutDashboard, label: 'Dashboard', role: 'admin' },
   { to: '/billing', icon: Receipt, label: 'New Bill', role: 'all' },
   { to: '/customers', icon: Users, label: 'Customers', role: 'all' },
   { to: '/products', icon: Package, label: 'Products', role: 'admin' },

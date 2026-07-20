@@ -44,7 +44,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/login" element={user ? <Navigate to="/" replace /> : <Login />} />
-      <Route path="/" element={<ProtectedLayout><Dashboard /></ProtectedLayout>} />
+      <Route path="/" element={<ProtectedLayout><AdminRoute><Dashboard /></AdminRoute></ProtectedLayout>} />
       <Route path="/billing" element={<ProtectedLayout><Billing /></ProtectedLayout>} />
       <Route path="/customers" element={<ProtectedLayout><Customers /></ProtectedLayout>} />
       <Route path="/products" element={<ProtectedLayout><AdminRoute><Products /></AdminRoute></ProtectedLayout>} />
