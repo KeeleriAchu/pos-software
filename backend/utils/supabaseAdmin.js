@@ -3,8 +3,8 @@ import { createClient } from '@supabase/supabase-js'
 // Admin client uses SERVICE_ROLE key — bypasses RLS for server operations
 // NEVER expose this key to the client/browser
 export const supabaseAdmin = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY,
+  process.env.SUPABASE_URL || 'https://urlqmabfldpakiyjndsr.supabase.co',
+  process.env.SUPABASE_SERVICE_ROLE_KEY || 'dummy_service_role_key',
   {
     auth: { autoRefreshToken: false, persistSession: false }
   }

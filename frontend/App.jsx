@@ -32,7 +32,7 @@ function ProtectedLayout({ children }) {
 function AdminRoute({ children }) {
   const { user } = useAuth()
   if (!user || user.role !== 'admin') {
-    return <Navigate to="/" replace />
+    return <Navigate to="/billing" replace />
   }
   return children
 }
@@ -43,7 +43,7 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/login" element={user ? <Navigate to="/" replace /> : <Login />} />
+      <Route path="/login" element={user ? <Navigate to={user.role === 'admin' ? '/' : '/billing'} replace /> : <Login />} />
       <Route path="/" element={<ProtectedLayout><AdminRoute><Dashboard /></AdminRoute></ProtectedLayout>} />
       <Route path="/billing" element={<ProtectedLayout><Billing /></ProtectedLayout>} />
       <Route path="/customers" element={<ProtectedLayout><Customers /></ProtectedLayout>} />
@@ -60,7 +60,7 @@ function AppRoutes() {
 export default function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <AuthProvider>
           <ToastProvider>
             <AppRoutes />

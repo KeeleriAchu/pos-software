@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { changePassword } from '../services/api';
 import { useAuth } from '../context/AuthContext';
-import { toast } from './ui/Toast'; // Assuming a toast component exists
+import { useToast } from '../components/ui/Toast';
 
 export default function ChangePassword() {
   const { user } = useAuth();
+  const toast = useToast();
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -13,18 +14,18 @@ export default function ChangePassword() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (newPassword !== confirmPassword) {
-      toast.error('New passwords do not match');
+      toast('New passwords do not match', 'error');
       return;
     }
     setLoading(true);
     try {
       await changePassword(currentPassword, newPassword);
-      toast.success('Password updated successfully');
+      toast('Password updated successfully');
       setCurrentPassword('');
       setNewPassword('');
       setConfirmPassword('');
     } catch (err) {
-      toast.error(err.message || 'Failed to change password');
+      toast(err.message || 'Failed to change password', 'error');
     } finally {
       setLoading(false);
     }

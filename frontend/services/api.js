@@ -46,6 +46,13 @@ export const signUp = async (email, password) => {
   return data;
 };
 
+export const signOut = async () => {
+  authToken = null;
+  localStorage.removeItem('pos_token');
+  localStorage.removeItem('pos_user');
+  window.dispatchEvent(new Event('authChange'));
+};
+
 export const changePassword = async (currentPassword, newPassword) => {
   return request('/api/auth/change-password', { method: 'POST', body: { currentPassword, newPassword } });
 };

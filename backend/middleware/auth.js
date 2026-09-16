@@ -1,6 +1,8 @@
 import jwt from 'jsonwebtoken';
 import { logger } from '../utils/logger.js';
 
+const JWT_SECRET = process.env.JWT_SECRET || 'change_this_secret';
+
 // Verify JWT from Authorization header
 export const requireAuth = (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -9,7 +11,7 @@ export const requireAuth = (req, res, next) => {
   }
   const token = authHeader.split(' ')[1];
   try {
-    const payload = jwt.verify(token, process.env.JWT_SECRET);
+    const payload = jwt.verify(token, JWT_SECRET);
     // Attach user info including role for downstream handlers
     req.userId = payload.id;
     req.user = { id: payload.id, email: payload.email, role: payload.role };
@@ -41,7 +43,7 @@ export const optionalAuth = (req, res, next) => {
   try {
     const token = req.headers.authorization?.split(' ')[1];
     if (token) {
-      const payload = jwt.verify(token, process.env.JWT_SECRET);
+      const payload = jwt.verify(token, JWT_SECRET);
       req.user = { id: payload.id, email: payload.email, role: payload.role };
       req.userId = payload.id;
     }

@@ -229,8 +229,11 @@ function BarcodeModal({ product, onClose, onBarcodeGenerated }) {
 // ── PRODUCT MODAL ─────────────────────────────
 function ProductModal({ product, onClose, onSave }) {
   const [form, setForm] = useState({
-    name:'', price:'', cost_price:'',
-    unit:'', category:'', barcode:'', image_url:'',
+    name: '',
+    unit: '',
+    category: '',
+    barcode: '',
+    image_url: '',
     ...product,
     price: product?.price ?? '',
     cost_price: product?.cost_price ?? '',

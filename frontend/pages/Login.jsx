@@ -25,7 +25,7 @@ export default function Login() {
         setIsSignUp(false)
       } else {
         const { token, user } = await signIn(email, password)
-        const target = user.role === 'admin' ? '/admin' : '/';
+        const target = user?.role === 'admin' ? '/' : '/billing';
         navigate(target, { replace: true })
       }
     } catch (err) {
